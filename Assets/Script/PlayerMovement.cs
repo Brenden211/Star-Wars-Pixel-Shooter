@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public int speed = 10;
-
     public float moveDirection = 0f;
 
     private void Update()
@@ -29,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Projectile"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Projectile") || other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             SceneManager.LoadScene("Game Over");
         }

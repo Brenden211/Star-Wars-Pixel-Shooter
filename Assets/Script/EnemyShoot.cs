@@ -4,42 +4,32 @@ using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
-    public Laser enemyLaserPrefab;
-    public int maxLaserShot = 1;
-    public int currentLaserShot = 0;
+    public Projectile EnemyLaserPrefab;
+    public System.Action destroyed;
+    public bool EnemyLaserActive = false;
+    public int ShootNumber = 0;
+    public int MaxShootNumber = 8;
 
-    private bool laserActive = false;
+    public void Update()
+    {
+       if (!EnemyLaserActive && ShootNumber < MaxShootNumber)
+       {
+           Instantiate(this.EnemyLaserPrefab, this.transform.position, Quaternion.identity);
+           EnemyLaserActive = true;
+            ShootNumber++;
+       }
 
-    private void Update()
-    { 
-        if (!laserActive && Random.value < 0.5)
-        {
-            ShootLaser();
-        }
     }
 
-    void ShootLaser()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-
-        foreach (Transform enemy in this.transform)
+        EnemyLaserActive = false;
+        if (other.gameObject.layer == LayerMask.NameToLayer("Barrier") || other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-
-            if (!enemy.gameObject.activeInHierarchy)
+            if (this.destroyed != null)
             {
-                continue;
-            }
-
-            if (Random.value < 5)
-            {
-                Instantiate(this.enemyLaserPrefab, enemy.position, Quaternion.identity);
-                break;
+                Destroy(this.gameObject);
             }
         }
-    }
-
-    void laserDestroyed()
-    {
-        currentLaserShot--;
-        laserActive = false;
     }
 }

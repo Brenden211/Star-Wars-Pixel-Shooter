@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class UI : MonoBehaviour
-{ 
+{
+    
     public void PlayGame()
     {
         SceneManager.LoadScene("Level 1");
@@ -18,5 +19,15 @@ public class UI : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
     }
 }
