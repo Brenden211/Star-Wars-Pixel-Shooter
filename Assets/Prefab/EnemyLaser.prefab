@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5278162091360821591}
   - component: {fileID: 7881784455511183123}
   m_Layer: 6
-  m_Name: Enemy Laser
+  m_Name: EnemyLaser
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7157254673002675459}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.051, y: -0.2679, z: 0}
+  m_LocalPosition: {x: -0.051, y: -0.2679, z: 1}
   m_LocalScale: {x: 0.6315382, y: 0.64286685, z: 0.6993004}
   m_Children: []
   m_Father: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430c1df77043f4e4aa507d8f0ce406af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 1, z: 0}
+  direction: {x: 0, y: -1, z: 0}
   speed: 8
 --- !u!82 &6248120978730127624
 AudioSource:
@@ -159,7 +159,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 10bbd94cf537c4a4a89b847da8019bc4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2bfcb64f0b7d44446816d1a024485b45, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1

@@ -8,7 +8,7 @@ public class PlayerShoot : MonoBehaviour
     public int maxLaserShot = 2;
     public int currentLaserShot = 0;
 
-    private bool LaserActive;
+    private bool laserActive;
 
     private void Update()
     {
@@ -20,18 +20,18 @@ public class PlayerShoot : MonoBehaviour
 
     void ShootLaser()
     {
-        if (!LaserActive || currentLaserShot < maxLaserShot)
+        if (!laserActive || currentLaserShot < maxLaserShot)
         {
             currentLaserShot++;
             Laser projectile = Instantiate(this.LaserPrefab, this.transform.position, Quaternion.identity);
             projectile.destroyed += laserDestroyed;
-            LaserActive = true;
+            laserActive = true;
         }
     }
 
     void laserDestroyed()
     {
         currentLaserShot--;
-        LaserActive = false;
+        laserActive = false;
     }
 }

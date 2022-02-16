@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -23,6 +24,14 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             moveDirection = 0f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Projectile"))
+        {
+            SceneManager.LoadScene("Game Over");
         }
     }
 }

@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 2c69a4bd2e9881a4db1052b563bacd10
+guid: e5e7ef92ad596824389361bccdb5d4ad
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - enemyLaserPrefab: {fileID: 8546659456114481159, guid: dcf1a1b8bdeb1fa42b471c311947ab90, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

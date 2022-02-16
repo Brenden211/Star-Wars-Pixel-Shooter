@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class UI : MonoBehaviour
 { 
-    void PlayGame()
+    public void PlayGame()
     {
         SceneManager.LoadScene("Level 1");
     }
 
-    void Controls()
+    public void Controls()
     {
         SceneManager.LoadScene("Controls Page");
     }
 
-    void Quit()
+    public void Quit()
     {
         Application.Quit();
     }
